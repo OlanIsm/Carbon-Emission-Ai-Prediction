@@ -29,11 +29,8 @@ Developed as part of the **Artificial Intelligence Course**, this project suppor
 
 1. **Clone the Repository**
 
-   ```bash
-   git clone https://github.com/USERNAME-LU/NAMA-REPO.git https://github.com/USERNAME-LU/NAMA-REPO.git
+   git clone https://github.com/OlanIsm/Carbon-Emission-Ai-Prediction?tab=readme-ov-file
    cd NAMA-REPO
-
-   ```
 
 2. **Install dependecies**
    pip install -r requirements.txt
