@@ -30,7 +30,7 @@ with st.form("prediction_form"):
     col1, col2 = st.columns(2)
     
     with col1:
-        # 1. Merek Mobil (Ambil otomatis dari Encoder)
+        # 1. Merek Mobil 
         make_options = encoders['Make'].classes_
         make = st.selectbox("Merek Mobil", make_options)
         
@@ -43,7 +43,6 @@ with st.form("prediction_form"):
         transmission = st.selectbox("Tipe Transmisi", trans_options)
         
         # 4. Jenis Bahan Bakar (MAPPING USER FRIENDLY)
-        # Kita buat kamus: Kunci (Teks Tampil) -> Nilai (Kode Asli Dataset)
         fuel_map = {
             "Regular Gasoline (X) - Setara Pertalite/Pertamax": "X",
             "Premium Gasoline (Z) - Setara Pertamax Turbo": "Z",
@@ -53,7 +52,7 @@ with st.form("prediction_form"):
         }
         # User pilih teks panjangnya
         selected_fuel_label = st.selectbox("Jenis Bahan Bakar", list(fuel_map.keys()))
-        # Kita ambil kode aslinya (X, Z, D, dst) buat dikirim ke AI
+        # Kita ambil kode aslinya (X, Z, D, dst)
         fuel_type_code = fuel_map[selected_fuel_label]
 
     with col2:
@@ -68,7 +67,6 @@ with st.form("prediction_form"):
 if submitted:
     try:
         # 2. Preprocessing Input (Ubah Pilihan User jadi Angka)
-        # Hati-hati: Urutan fitur harus SAMA PERSIS waktu training
         
         make_enc = encoders['Make'].transform([make])[0]
         vehicle_enc = encoders['Vehicle Class'].transform([vehicle_class])[0]
