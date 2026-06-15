@@ -1,42 +1,81 @@
-# 🚗 AI Vehicle Carbon Emission Prediction
+# AI-Driven Vehicle Carbon Footprint Predictor
 
-![Python] https://img.shields.io/badge/Python-3.9%2B-blue
-![Streamlit] https://img.shields.io/badge/Streamlit-MVP-red
-![XGBoost] https://img.shields.io/badge/Model-XGBoost-green
-![SDG] https://img.shields.io/badge/SDG-13%20Climate%20Action-orange
+## Project Overview
 
-## 📌 Project Overview
+This repository hosts an advanced machine learning application designed to predict vehicle CO2 emissions (measured in grams per kilometer) based on mechanical and fuel consumption characteristics. Developed to align with the United Nations Sustainable Development Goal 13 (Climate Action), this tool provides precise estimations of vehicle environmental footprints, facilitating environmental compliance assessment and consumer transparency.
 
-This project is a Machine Learning-based application designed to predict vehicle CO2 emissions (g/km) based on engine specifications.
+The frontend is built with Streamlit, styled with an immersive dark glassmorphic user interface, and powered by a high-performance predictive model in the backend.
 
-Developed as part of the **Artificial Intelligence Course**, this project supports **SDG #13: Climate Action** by raising awareness about transportation emissions. The application serves as an **MVP (Minimum Viable Product)** to help users estimate the environmental impact of various vehicle types.
+## Predictive Engine
 
-## 🤖 Machine Learning Model
+The core prediction framework is constructed utilizing Extreme Gradient Boosting (XGBoost) regression, achieving high-fidelity predictive accuracy for this domain.
 
-- **Algorithm:** XGBoost Regressor (Extreme Gradient Boosting)
-- **Accuracy:** >99% (R2 Score)
-- **Key Features:**
-  - Predicts CO2 emissions based on Engine Size, Cylinders, Fuel Consumption, and Vehicle Class.
-  - Utilizes `LabelEncoder` for categorical data processing.
+- Algorithm: XGBoost Regressor (Extreme Gradient Boosting)
+- Accuracy: >99% R-squared (R2) score on test splits
+- Core Features Utilized:
+  - Car Brand (Make)
+  - Vehicle Class
+  - Transmission Type
+  - Fuel Type (Regular/Premium Gasoline, Diesel, Ethanol, Natural Gas)
+  - Engine Size (Liters)
+  - Cylinders count
+  - Combined Fuel Consumption (L/100km)
 
-## 🛠️ Tech Stack
+Categorical variables are preprocessed and aligned dynamically using serialized LabelEncoders.
 
-- **Language:** Python
-- **Framework:** Streamlit (for Web Interface)
-- **Libraries:** Pandas, NumPy, Scikit-Learn, XGBoost, Joblib
+## Technology Stack
 
-## 🚀 How to Run the App locally
+- Core Programming Language: Python 3.9+
+- Frontend User Interface: Streamlit
+- Scientific Computing & Machine Learning: Pandas, NumPy, Scikit-Learn, XGBoost
+- Model Serialization: Joblib
 
-1. **Clone the Repository**
+## Installation and Deployment
 
-   git clone https://github.com/OlanIsm/Carbon-Emission-Ai-Prediction?tab=readme-ov-file
-   cd NAMA-REPO
+Follow these instructions to run the application in a local development environment.
 
-2. **Install dependecies**
-   pip install -r requirements.txt
+### 1. Clone the Repository
 
-3. **Run the Streamlit App**
-   streamlit run app.py
+Clone the project repository and navigate to the project directory:
 
-   **Created By**
-   Group 4
+```bash
+git clone https://github.com/OlanIsm/Carbon-Emission-Ai-Prediction.git
+cd Carbon-Emission-Ai-Prediction
+```
+
+### 2. Configure Virtual Environment
+
+Create and activate a virtual environment to manage dependencies:
+
+- On Windows:
+  ```powershell
+  python -m venv venv
+  .\venv\Scripts\Activate.ps1
+  ```
+- On macOS/Linux:
+  ```bash
+  python3 -m venv venv
+  source venv/bin/activate
+  ```
+
+### 3. Install Dependencies
+
+Install all package requirements listed in the requirements file:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Application
+
+Start the Streamlit application server:
+
+```bash
+streamlit run app.py
+```
+
+The application will be accessible via your default web browser at `http://localhost:8501`.
+
+## Contributors
+
+Developed by Group 4 as part of the Artificial Intelligence Course curriculum.
