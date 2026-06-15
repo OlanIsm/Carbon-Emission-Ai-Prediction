@@ -1,4 +1,5 @@
 # AI-Driven Vehicle Carbon Footprint Predictor
+<img width="1415" height="941" alt="Screenshot 2026-06-16 020150" src="https://github.com/user-attachments/assets/e2ea4a56-055e-4d46-8401-b452062b97ea" />
 
 ## Project Overview
 
